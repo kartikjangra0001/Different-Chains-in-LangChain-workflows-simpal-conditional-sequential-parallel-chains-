@@ -52,7 +52,7 @@ Perfect for developers learning LangChain, building AI workflows, or experimenti
 
    ```bash
    python -m venv venv
-   source venv/bin/activate    # On Windows: venv\Scripts\activate
+   venv\Scripts\activate  # On Windows:
    ```
 
 3. **Install dependencies**:
@@ -110,7 +110,7 @@ Different-Chains-in-LangChain-workflows/
 
 ## 🔐 API Key Setup
 
-1. Sign up at [https://openrouter.ai](https://openrouter.ai).
+1. Sign up at openrouter
 2. Generate your API key.
 3. Save it in a `.env` file:
 
