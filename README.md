@@ -1,67 +1,95 @@
-LangChain diffrent type of workflows simpal conditional sequential parallel chains
-Short Project Description
-LangChainPlayground is a Python-based project that showcases the versatility of LangChain through four distinct workflows: simple, sequential, parallel, and conditional chains. Integrated with OpenRouter’s DeepSeek model, it demonstrates AI-driven text processing tasks, such as generating facts about a topic, summarizing reports, creating notes and quizzes, and responding to feedback based on sentiment analysis. Perfect for developers exploring LangChain and NLP workflows.
+# LangChain Playground: Different Types of Workflows
 
-Type of langchin
-![image](https://github.com/user-attachments/assets/23670e84-cd42-4761-aff5-b04390e39cca)
+A Python-based project that demonstrates the flexibility and power of **LangChain** by implementing four distinct workflows — **Simple**, **Sequential**, **Parallel**, and **Conditional** Chains — all integrated with **OpenRouter's DeepSeek** model.
 
+![Workflow Types](https://github.com/user-attachments/assets/23670e84-cd42-4761-aff5-b04390e39cca)
 
-The command python parallel_chain.py being executed.
-The output showing generated notes and a 5-question quiz about Support Vector Machines (SVMs).
-The ASCII graph of the chain displayed at the end.This visual will highlight the project’s ability to process text in parallel and display structured outputs, making it engaging for viewers.
+---
 
-Features
+## 🔍 Short Project Description
 
-Simple Chain: Generates five interesting facts about a user-specified topic (e.g., cricket).
-Sequential Chain: Creates a detailed report and then summarizes it into a 5-point summary.
-Parallel Chain: Simultaneously generates notes and a quiz from a given text, merging them into a single document.
-Conditional Chain: Classifies feedback sentiment (positive/negative) and generates tailored responses.
-OpenRouter Integration: Leverages the DeepSeek model via OpenRouter’s API for efficient text processing.
-ASCII Graph Visualization: Displays the structure of each LangChain workflow using grandalf.
+**LangChainPlayground** showcases how to utilize LangChain to solve various NLP tasks:
 
-Technologies Used
+- **Simple Chains**: Generate interesting facts.
+- **Sequential Chains**: Build reports and summarize them.
+- **Parallel Chains**: Produce notes and quizzes simultaneously.
+- **Conditional Chains**: Perform sentiment-based responses.
 
-Python: Python
-LangChain: For building and managing NLP workflows.
-langchain-core: Core components for LangChain chains.
-python-dotenv: For secure environment variable management.
-openai: For interacting with OpenRouter’s API.
-pydantic: For structured output parsing in the conditional chain.
-grandalf: For rendering ASCII graphs of LangChain workflows.
+Perfect for developers learning LangChain, building AI workflows, or experimenting with OpenRouter APIs.
 
-Installation Instructions
+---
 
-Clone the repository:git clone https://github.com/vishal815/Different-Chains-in-LangChain-workflows-simpal-conditional-sequential-parallel-chains-.git
-cd Different-Chains-in-LangChain-workflows-simpal-conditional-sequential-parallel-chains-
+## 🚀 Features
 
+- 🔹 **Simple Chain**: Generates 5 interesting facts about any topic (e.g., Cricket).
+- 🔹 **Sequential Chain**: Builds a full report and summarizes it in 5 points.
+- 🔹 **Parallel Chain**: Simultaneously generates notes and a quiz from a topic (e.g., SVMs).
+- 🔹 **Conditional Chain**: Detects sentiment and provides a tailored response.
+- 🔹 **OpenRouter Integration**: Uses DeepSeek model via OpenRouter API.
+- 🔹 **ASCII Graphs**: Visualizes each chain using `grandalf`.
 
-Create a virtual environment (optional but recommended):python -m venv venv
-source venv/bin/activate  # On Windows: venv\Scripts\activate
+---
 
+## 🛠️ Technologies Used
 
-Install the required dependencies:pip install -r requirements.txt
+- **Python** – Programming language.
+- **LangChain / langchain-core** – For building and composing chains.
+- **OpenAI & OpenRouter** – For leveraging LLMs.
+- **Pydantic** – Structured output handling.
+- **dotenv** – Environment variable management.
+- **Grandalf** – For ASCII graph rendering of LangChain workflows.
 
+---
 
-Create a .env file in the project root with your OpenRouter API key:OPENROUTER_API_KEY=your-api-key-here
+## 📦 Installation
 
+1. **Clone the repository**:
+   ```bash
+   git clone https://github.com/vishal815/Different-Chains-in-LangChain-workflows-simpal-conditional-sequential-parallel-chains-.git
+   cd Different-Chains-in-LangChain-workflows-simpal-conditional-sequential-parallel-chains-
 
+2. **Create virtual environment** *(optional but recommended)*:
 
-How to Use
+   ```bash
+   python -m venv venv
+   source venv/bin/activate    # On Windows: venv\Scripts\activate
+   ```
 
-Ensure your .env file contains a valid OPENROUTER_API_KEY.
-Run any of the chain scripts to see the results:python simple_chain.py
+3. **Install dependencies**:
 
+   ```bash
+   pip install -r requirements.txt
+   ```
 
-simple_chain.py: Generates 5 facts about a topic (e.g., cricket).
-sequential_chain.py: Generates a report and a 5-point summary on a topic (e.g., unemployment).
-parallel_chain.py: Creates notes and a quiz in parallel from a text (e.g., SVMs).
-conditional_chain.py: Classifies feedback sentiment and responds accordingly.
+4. **Set up your API key**:
 
+   * Create a `.env` file in the root directory:
 
-View the ASCII graph output for each chain to understand its workflow.
+     ```env
+     OPENROUTER_API_KEY=your-api-key-here
+     ```
 
-Folder Structure
-Different-Chains-in-LangChain-workflows-simpal-conditional-sequential-parallel-chains-/
+---
+
+## ▶️ How to Use
+
+Ensure your `.env` contains a valid `OPENROUTER_API_KEY`, then run:
+
+```bash
+python simple_chain.py         # To get 5 facts about a topic
+python sequential_chain.py     # To create a report and summary
+python parallel_chain.py       # To generate notes and a quiz together
+python conditional_chain.py    # To respond to sentiment-based feedback
+```
+
+Each script displays a visual **ASCII graph** of the workflow using `grandalf`.
+
+---
+
+## 📂 Folder Structure
+
+```
+Different-Chains-in-LangChain-workflows/
 ├── simple_chain.py         # Simple chain for generating facts
 ├── sequential_chain.py     # Sequential chain for report and summary
 ├── parallel_chain.py       # Parallel chain for notes and quiz
@@ -69,22 +97,41 @@ Different-Chains-in-LangChain-workflows-simpal-conditional-sequential-parallel-c
 ├── requirements.txt        # Project dependencies
 ├── .env                   # Environment variables (not included in repo)
 └── README.md              # Project documentation
+```
 
-Output of code and ASCII graphs of LangChain workflows witten in after code as comment.
+---
 
-API Keys/Secrets Setup
-
-Sign up for an OpenRouter account at https://openrouter.ai to obtain an API key.
-Create a .env file in the project root with the following content:OPENROUTER_API_KEY=your-api-key-here
-
-
-Ensure the .env file is listed in .gitignore to prevent accidental exposure of your API key.
+##  Output
+   Output of code and ASCII graphs of LangChain workflows written after the code as a comment in the respective file.
 
 
 
-Name: Vishal Lazrus
-GitHub: //github.com/vishal815/Different-Chains-in-LangChain-workflows-simpal-conditional-sequential-parallel-chains-.git
-Credits: Built using the LangChain framework and OpenRouter’s DeepSeek model.
+---
 
-License
-This project is licensed under the MIT License. See the LICENSE file for details.
+## 🔐 API Key Setup
+
+1. Sign up at [https://openrouter.ai](https://openrouter.ai).
+2. Generate your API key.
+3. Save it in a `.env` file:
+
+   ```env
+   OPENROUTER_API_KEY=your-api-key-here
+   ```
+
+✅ Add `.env` to `.gitignore` to avoid exposing secrets.
+
+---
+
+## 👨‍💻 Author
+
+**Name**: Vishal Lazrus
+**GitHub**: [@vishal815](https://github.com/vishal815/Different-Chains-in-LangChain-workflows-simpal-conditional-sequential-parallel-chains-.git)
+
+---
+
+## 📄 License
+
+This project is licensed under the **MIT License**.
+See the [LICENSE](LICENSE) file for more details.
+
+---
