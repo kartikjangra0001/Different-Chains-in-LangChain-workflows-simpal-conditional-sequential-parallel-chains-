@@ -23,7 +23,7 @@ Perfect for developers learning LangChain, building AI workflows, or experimenti
 
 - 🔹 **Simple Chain**: Generates 5 interesting facts about any topic (e.g., Cricket).
 - 🔹 **Sequential Chain**: Builds a full report and summarizes it in 5 points.
-- 🔹 **Parallel Chain**: Simultaneously generates notes and a quiz from a topic (e.g., SVMs).
+- 🔹 **Parallel Chain**: Simultaneously generates notes and a quiz from a topic (e.g., LangGraph generative AI).
 - 🔹 **Conditional Chain**: Detects sentiment and provides a tailored response.
 - 🔹 **OpenRouter Integration**: Uses DeepSeek model via OpenRouter API.
 - 🔹 **ASCII Graphs**: Visualizes each chain using `grandalf`.
